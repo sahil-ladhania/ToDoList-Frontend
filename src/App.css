@@ -1,38 +1,201 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+/* Body Styles */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* Dark Theme CSS Variables */
+.dark-theme{
+    --app-logo:  #0C090A;
+    --dark-mode-button-background: rgb(193, 191, 191);
+    --dark-mode-button-color: #0C090A;
+    --add-to-do-button-background: #0C090A;
+    --add-to-do-button-color:  whitesmoke;
+    --navbar--background: #0C090A;
+    --body-background: #0C090A;
+    --todo-background: linear-gradient(to right, #ED4264, #FFEDBC);
+    --navbar-shadow: 0 15px 70px rgba(0, 0, 0, 0.5);
+    --textfeild-border: 1px whitesmoke solid;
+    --textfeild-placeholder-color: rgb(2, 9, 45);
+    --todo-box-shadow: -2px 2px 5px #888888;
+}
+/* Light Theme CSS Variables */
+.light-theme{
+    --app-logo: #0C090A;
+    --dark-mode-button-background: #0C090A;
+    --dark-mode-button-color: rgb(255, 255, 255);
+    --add-to-do-button-background: #0C090A;
+    --add-to-do-button-color:  whitesmoke;
+    --navbar--background: whitesmoke;
+    --body-background: whitesmoke;
+    --todo-background: linear-gradient(to right, #ED4264, #FFEDBC);
+    --navbar-shadow: 0 15px 70px rgba(0, 0, 0, 0.2);
+    --textfeild-border: 1px black solid;
+    --textfeild-placeholder-color: rgb(2, 9, 45);
+    --todo-box-shadow: -2px 2px 5px #888888;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* ---------Navbar Styling--------- */
+
+/* Navbar */
+.Navbar{
+    height: 100px;
+    width: auto;
+    background-color: var(--navbar-background);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    box-shadow: var(--navbar-shadow);
+}
+/* Navbar List */
+.List{
+    list-style: none;
+}
+/* Navbar Logo */
+.TODOLIST{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 30px;
+    letter-spacing: 10px;
+    font-weight: bolder;
+    color: var(--app-logo);
+}
+/* Navbar Button */
+.Dark-Mode{
+    height: 50px;
+    margin-right: 25px;
+    padding: 8px 20px;
+    border: 1px transparent solid;
+    background-color: var(--dark-mode-button-background);
+    color: var(--dark-mode-button-color);
+    border-radius: 30px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+}
+.Dark-Mode:hover{
+    transform: scale(1.1);
+    transition: transform 0.2s ease-in-out;
+}
+/* ---------Welcome Styling--------- */
+
+/* Heading Container */
+.Heading-Container{
+    height: 50px;
+    width: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    margin-top: 30px;
+}
+/* Welcome Message */
+.Welcome{
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 1px;
+    font-weight: bold;
+}
+/* ---------Textfeild Styling--------- */
+
+/* Main Container */
+.Main-Container{
+    height: 120px;
+    width: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+/* ToDo Form */
+.ToDo-Form{
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+/* Textfeild */
+.Textfeild{
+    height: 40px;
+    width: 500px;
+    padding: 10px 25px;
+    border-radius: 30px;
+    outline: none;
+    border: var(--textfeild-border);
+}
+/* Textfeild Placeholder */
+.Textfeild::placeholder{
+    font-family: 'Montserrat', sans-serif;
+    color: var(--textfeild-placeholder-color);
+    font-size: small;
+}
+/* Add-ToDo Button */
+.Add-ToDo{
+    height: 40px;
+    width: 150px;
+    border-radius: 30px;
+    border: 1px transparent solid;
+    background-color: var(--add-to-do-button-background);
+    color: var(--add-to-do-button-color);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    margin-left: 10px;
+}
+/* Add-ToDo Hover */
+.Add-ToDo:hover{
+    transform: scale(1.1);
+    transition: transform 0.2s ease-in-out;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
+/* ---------ToDo's Styling--------- */
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+/* Main ToDo */
+.main-todo{
+    height: auto;
+    width: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 30px;
 }
-
-.App-link {
-  color: #61dafb;
+/* ToDo */
+.todo{
+    height: 40px;
+    width: 670px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-image: var(--todo-background);
+    padding: 5px 10px;
+    border-radius: 20px;
+    box-shadow: var(--todo-box-shadow);
+    margin-top: 15px;
 }
+/* Updating InputFeild */
+.updating{
+    background: transparent;
+    border: 0px transparent solid;
+}
+/* Text */
+.text{
+    font-family: 'Montserrat', sans-serif;
+    font-size: small;
+    padding-left: 30px;
+    font-weight: bold;
+}
+/* Icon Container */
+.icons{
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+}
+/* Icon */
+.icon{
+    margin: 5px;
+    cursor: pointer;
+}
+/* Icon Hover */
+.icon:hover{
+    transform: scale(1.4);
+    transition: transform 0.2s ease-in-out;
 }
